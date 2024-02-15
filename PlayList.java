@@ -75,7 +75,7 @@ class PlayList {
     public int totalDuration() {
         int totalDuration = 0;
         for (int i = 0; i < size; i++) {
-            totalDuration += tracks.getDuration();
+            totalDuration += tracks[i].getDuration();
         }
         return totalDuration;
     }
@@ -153,7 +153,7 @@ class PlayList {
      */
     //// An elegant and terribly inefficient implementation.
     public void add(PlayList other) {
-        if (size + other.getSize() <= maxsize) {
+        if (size + other.getSize() <= maxSize) {
             for (int i = 0; i < other.getSize(); i++) {
                 add(other.getTrack(i));
             }
